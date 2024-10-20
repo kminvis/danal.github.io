@@ -26,12 +26,70 @@
 }
 .imp-dialog .imp-frame-mobile.imp-frame-danal {
     height: 800px !important;
-    margin-top: -100px;
+    margin-top: -210px;
     position: inherit !important;
 }
 /* #content * {
     display: block !important;
 } */
+:root {
+    --background-color1: #fff;
+    --background-color2: #f0f2f4;
+    --background-color3: #e8e8e9;
+    --red-color1: red;
+    --red-color2: #ff3a4a;
+    --red-color3: #ff9c9d;
+    --red-color4: #d7341d;
+    --blue-color1: #bbddf6;
+    --blue-color2: #7cc0f4;
+    --blue-color3: #2496ec;
+    --blue-color4: #ecf1ff;
+    --blue-color5: #6686d6;
+    --blue-color6: #0036bb;
+    --green-color1: #14734e;
+    --green-color2: #7db19c;
+    --grey-scale-color1: #f0f2f4;
+    --grey-scale-color2: #d8d8d8;
+    --grey-scale-color3: #a7a7a7;
+    --grey-scale-color4: #969696;
+    --grey-scale-color5: #7a7a7a;
+    --grey-scale-color6: #505050;
+    --grey-scale-color7: #222;
+    --grey-scale-color8: #f4f4f4;
+    --grey-scale-color9: #999;
+    --grey-scale-color10: #bdbdbd;
+    --grey-scale-color11: #3c3c3c;
+    --grey-scale-color12: #fbfbfb;
+    --grey-scale-color13: #333;
+    --grey-scale-color14: #858585;
+    --ext-join-color1: var(--blue-color4);
+    --ext-join-color2: var(--blue-color5);
+    --ext-join-color3: var(--blue-color6);
+    --ext-join-color4: var(--blue-color6);
+    --ext-join-color5: var(--blue-color5);
+    --ext-join-color6: var(--blue-color6);
+    --ext-join-color7: var(--blue-color5);
+    --ext-join-color8: var(--blue-color6)
+}
+
+html {
+    height: 100%;
+    overflow-y: auto
+}
+
+::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0
+}
+
+*,:after,:before {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
 a,a * {
     text-decoration: none
 }
@@ -984,6 +1042,7 @@ button,input[type=date],input[type=email],input[type=month],input[type=number],i
     </style>
 </head>
 <body>
+    <section class="header-section"> <div class="ext-join-common" style="display: block;"> 환급금 <span>이동통신사 유료부가서비스</span> <div class="divider"></div> </div> <div class="skt-event kt-event"> 환급금 <span>이동통신사 유료부가서비스</span> <span style="font-weight:500">/ 매월 3,300원(VAT포함)</span> </div> </section>
     <div id="content" class="content-container">
         <div class="ext-join-common" style="display: block;"> <div class="detail"> <img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_top_msg.png" data-name="ico_ext_join_top_msg" alt="정부지원금 및 동네 생활정보 찾기 서비스"> </div> <div class="service-intro"> <div class="ico-list-container"> <div class="ico-list"> <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro1.svg" data-name="ico_ext_join_svc_intro1" alt="정책 지원금 확인하기"></div> <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro2.svg" data-name="ico_ext_join_svc_intro2" alt="물가 확인하고 장보기"></div> <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro3.svg" data-name="ico_ext_join_svc_intro3" alt="안전지수 확인하고 사고 위험 대비"></div> </div> </div> </div> </div>
     </div>
@@ -1028,5 +1087,7 @@ button,input[type=date],input[type=email],input[type=month],input[type=number],i
             });
         });
     </script>
+    <div class="auth-container"> <button class="request-sub-btn btn-disabled" id="reqJoin">환급금 유료가입</button> <div class="price-notice"> 매월 부가세 포함 3,300원<br><span>본 서비스는 이용료가 통신요금에 포함되어 부과됩니다. </span> </div>  </div>
+    <section class="footer-section" style="display: block;"> <div class="ext-join-common" style="display: block;"> <div class="terms-info"> <h5 onclick="window.open(&quot;https://lifeinfo.ai/terms-list/&quot;,&quot;_blank&quot;)">서비스 이용약관</h5> <div class="terms-divider"></div> <h3 onclick="openTerms(&quot;PRIVACY_POLICY&quot;)" style="color:var(--grey-scale-color7)">개인정보 처리방침</h3> </div> <h3>서비스 안내</h3> <h5>본 서비스는 전용 페이지에서 이용 가능합니다.</h5> <h5> <ul> <li>가입/해지: 0000-0000(평일 10시~17시)</li> <li>서비스 해지 시 이용 요금은 사용일 수만큼 일할 계산되어 과금되며, 30일 내 재가입이 불가합니다.</li> <li>환불: 공정거래위원회 소비자분쟁해결기준에 의거하여 분쟁 해결 및 이용 요금 환불 처리를 진행하며, 환불 사유 확인 후 환불을 지연한 경우 환불금의 연6% 지연이자를 가산하여 지급할 수 있습니다. 환불 신청 및 계약 해지와 환불 신청에 대한 결과 확인은 고객센터(1555-1576)을 통해 확인 가능합니다.</li> <li>선불요금제, 사물통신/모뎀요금제 사용자, 법인 및 미성년자는 서비스 가입 및 이용이 불가능합니다.</li> </ul> </h5> </div> <div class="skt-event"> <div class="event-info"> <h3>이벤트 안내</h3> <h5> <ul> <li>본 이벤트는 만 19세 이상만 참여 가능합니다.</li> <li>이벤트 상품은 이벤트 기간 동안 유료구독을 유지한 회원들에게 이벤트 이후 11월 1일 자에 일괄 지급됩니다.</li> <li>이벤트 기간은 2024.10.14~2024.10.31 입니다.</li> <li>이벤트 참여 완료 시 휴대폰 번호 기준으로 1회에 한하여 상품이 지급됩니다.</li> <li>본 이벤트는 사전 공지 없이 변경 또는 중단될 수 있습니다.</li> <li>작성한 정보가 정확하지 않아 발생하는 불이익에 대해서는 당사는 책임지지 않습니다.</li> <li>이벤트 문의: @ </li> </ul> </h5> </div>  <div class="company-info"> <h3>(주) </h3> <div class="detail"> <h5>대표: </h5> <h5>서울 </h5> <h5>사업자등록번호: </h5> <h5>고객센터: </a> (평일 10시-17시, 점심시간 제외)</h5> <h5 style="margin-bottom:12px">이메일: </h5> <h5>Ⓒ 2024. . All rights reserved.</h5> </div> </div> </section>
 </body>
 </html>
