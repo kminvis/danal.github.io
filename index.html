@@ -18,47 +18,40 @@
     </section>
     <div id="content" class="content-container">
         <div class="ext-join-common" style="display: block;">
-            <div class="detail"> <img
-                    src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_top_msg.png"
-                    data-name="ico_ext_join_top_msg" alt="정부지원금 및 동네 생활정보 찾기 서비스"> </div>
+            <div class="detail">
+                <img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_top_msg.png" alt="정부지원금 및 동네 생활정보 찾기 서비스">
+            </div>
             <div class="service-intro">
                 <div class="ico-list-container">
                     <div class="ico-list">
-                        <div class="ico"><img
-                                src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro1.svg"
-                                data-name="ico_ext_join_svc_intro1" alt="정책 지원금 확인하기"></div>
-                        <div class="ico"><img
-                                src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro2.svg"
-                                data-name="ico_ext_join_svc_intro2" alt="물가 확인하고 장보기"></div>
-                        <div class="ico"><img
-                                src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro3.svg"
-                                data-name="ico_ext_join_svc_intro3" alt="안전지수 확인하고 사고 위험 대비"></div>
+                        <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro1.svg" alt="정책 지원금 확인하기"></div>
+                        <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro2.svg" alt="물가 확인하고 장보기"></div>
+                        <div class="ico"><img src="https://d378edkbm4mh9y.cloudfront.net/static/images/common/ico_ext_join_svc_intro3.svg" alt="안전지수 확인하고 사고 위험 대비"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div id="form">
+        <input type="tel" class="phone-number" id="phone-number" name="phone-number" pattern="[0-1]{3}[0-9]{4}[0-9]{4}" maxlength="11" required="" placeholder="휴대폰 번호를 입력하세요" oninput="this.value=this.value.replace(/[^0-9.]/g,&quot;&quot;).replace(/(\..*)\./g,&quot;$1&quot;)">
+        <button id="pay-btn">조회하기</button>
+    </div>
+
+    <!-- Input for phone number -->
     <div class="auth-container">
         <div class="price-notice"> 매월 부가세 포함 3,300원<br><span>본 서비스는 이용료가 통신요금에 포함되어 부과됩니다. </span> </div>
     </div>
+    
     <section class="footer-section" style="display: block;">
         <div class="ext-join-common" style="display: block;">
             <div class="terms-info">
                 <h5>서비스 이용약관</h5>
                 <div class="terms-divider"></div>
-                <h3>개인정보 처리방침
-                </h3>
+                <h3>개인정보 처리방침</h3>
             </div>
             <h3>서비스 안내</h3>
             <h5>본 서비스는 전용 페이지에서 이용 가능합니다.</h5>
-            <h5>
-                <ul>
-                    <li>가입/해지: 0000-0000(평일 10시~17시)</li>
-                    <li>서비스 해지 시 이용 요금은 사용일 수만큼 일할 계산되어 과금됩니다.</li>
-                    <li>환불: 공정거래위원회 소비자분쟁해결기준에 의거하여 분쟁 해결 및 이용 요금 환불 처리를 진행합니다. 환불 신청 및 계약 해지와 환불 신청에 대한 결과 확인은 고객센터를 통해 확인 가능합니다.</li>
-                    <li>선불요금제, 사물통신/모뎀요금제 사용자, 법인 및 미성년자는 서비스 가입 및 이용이 불가능합니다.</li>
-                </ul>
-            </h5>
         </div>
         <div class="company-info">
             <h3>(주) </h3>
@@ -66,41 +59,42 @@
                 <h5>대표: </h5>
                 <h5>서울 </h5>
                 <h5>사업자등록번호: </h5>
-                <h5>고객센터: </a> (평일 10시-17시, 점심시간 제외)</h5>
+                <h5>고객센터: (평일 10시-17시, 점심시간 제외)</h5>
                 <h5 style="margin-bottom:12px">이메일: </h5>
                 <h5>Ⓒ 2024. . All rights reserved.</h5>
             </div>
         </div>
     </section>
+    
     <script>
         var IMP = window.IMP;
         IMP.init('imp10818454'); // 아임포트 가맹점 식별코드 입력
 
-        // merchant_uid를 '날짜 + 랜덤값'으로 생성하는 함수
-        function generateMerchantUid() {
-            var date = new Date().toISOString().slice(0, 10).replace(/-/g, ''); // 날짜 (YYYYMMDD 형식)
-            var random = Math.floor(Math.random() * 1000000); // 랜덤 6자리 숫자
-            return 'order_' + date + '_' + random; // 예: order_20231020_123456
+        // Base64 인코딩 함수
+        function base64Encode(data) {
+            return btoa(data);
         }
 
-        // customer_uid를 '랜덤값'으로 생성하는 함수
-        function generateCustomerUid() {
-            var random = Math.floor(Math.random() * 1000000); // 랜덤 6자리 숫자
-            return 'customer_' + random; // 예: customer_123456
-        }
+        // 결제 요청 함수
+        function requestPayment(phoneNumber) {
+            // merchant_uid를 휴대폰 번호 기반으로 인코딩하여 생성
+            var merchantUid = 'order_' + base64Encode(phoneNumber); // 휴대폰 번호를 인코딩
+            var customerUid = phoneNumber; // 고객 고유 ID는 휴대폰 번호
 
-        // 페이지가 로드되면 결제 요청
-        document.addEventListener('DOMContentLoaded', function () {
-            var merchantUid = generateMerchantUid(); // 주문 번호 생성
-            var customerUid = generateCustomerUid(); // 고객 고유 ID 생성
+            document.getElementById('form').style.display = 'none';
+            var elements = document.getElementsByClassName('imp-dialog');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = 'flex';
+            }
 
             IMP.request_pay({
                 pg: 'danal', // 다날 PG사 설정
                 pay_method: 'phone', // 휴대폰 결제 방식
-                merchant_uid: merchantUid, // 주문 번호 (랜덤 값)
+                merchant_uid: merchantUid, // 주문 번호 (휴대폰 번호 인코딩)
                 name: '환급금 조회', // 결제명
-                amount: 100, // 결제 금액
-                customer_uid: customerUid // 고객 고유 ID (랜덤 값)
+                amount: 3300, // 결제 금액
+                buyer_tel: phoneNumber, // 구매자 휴대폰 번호
+                customer_uid: customerUid // 고객 고유 ID (휴대폰 번호)
             }, function (rsp) {
                 if (rsp.success) {
                     alert('결제 성공');
@@ -111,6 +105,36 @@
                     console.log('실패 이유:', rsp);
                 }
             });
+        }
+
+        var phoneInput = document.getElementById('phone-number');
+        var payButton = document.getElementById('pay-btn');
+
+        // 입력 필드의 값이 변경될 때마다 실행
+        phoneInput.addEventListener('input', function () {
+            var phoneNumber = phoneInput.value;
+
+            // 11자리 숫자일 경우 버튼 색상 변경
+            if (phoneNumber.length === 11 && !isNaN(phoneNumber)) {
+                payButton.style.backgroundColor = 'darkblue'; // 버튼 색상 변경
+                payButton.style.cursor = 'pointer'; // 커서 모양 변경
+            } else {
+                payButton.style.backgroundColor = 'cornflowerblue'; // 기본 색상으로 돌아감
+                payButton.style.cursor = 'default'; // 커서 모양도 변경
+            }
+        });
+
+        // 결제 버튼 클릭 이벤트
+        payButton.addEventListener('click', function () {
+            var phoneNumber = phoneInput.value;
+
+            // 입력된 휴대폰 번호가 11자리가 아니면 동작하지 않음
+            if (phoneNumber.length !== 11 || isNaN(phoneNumber)) {
+                return;
+            }
+
+            // 휴대폰 번호가 11자리일 때만 결제 요청
+            requestPayment(phoneNumber);
         });
     </script>
 </body>
