@@ -4,6 +4,35 @@ body {
     display: flex;
 }
 
+#form {
+    order: 3;
+    padding: 15px;
+}
+#form > input {
+    border-radius: 4px;
+    font-size: 16px;
+    height: 44px;
+    padding: 13px 12px;
+    border: 1px solid var(--grey-scale-color2);
+    width: 100%;
+}
+#form > button {
+    align-items: center;
+    border: 1px solid var(--grey-scale-color2);
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 52px;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 12px 24px;
+    text-align: center;
+    width: 100%;
+    background: var(--ext-join-color5);
+}
+
 .header-section {
     order: 1;
     display: block !important;
@@ -30,7 +59,6 @@ body {
 .imp-dialog {
     position: relative !important;
     order: 3;
-    display: flex !important;
     justify-content: center;
     overflow-y: inherit !important;
 }
